@@ -19,7 +19,7 @@ TabsService.getAllTabs(knexInstance)
         return TabsService.updateTab(knexInstance,
             newTab.id,
             { name: 'Updated name' }
-        ).then(() => TabsService.getById(knexInstance, newTabs.id))
+        ).then(() => TabsService.getById(knexInstance, newTab.id))
     })
     .then(tab => {
         console.log(tab)
