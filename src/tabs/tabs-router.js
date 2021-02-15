@@ -1,8 +1,6 @@
 const path = require('path')
 const express = require('express')
-const axios = require('axios')
 const TabsService = require('./tabs-service')
-const config = require('../config')
 
 const tabsRouter = express.Router()
 const jsonParser = express.json()
