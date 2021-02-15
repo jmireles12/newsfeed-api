@@ -45,19 +45,6 @@ tabsRouter
                 .catch(next)
     })
 
-/* tabsRouter
-    .route('/news')
-    .get((req, res, next) => {
-        axios.get(config.API_URL)
-            .then(function (response) {
-                results = response.data.results
-                res.json(results.map(serializeNews))
-            })
-            .catch(function(error) {
-                console.error(error)
-            })
-    }) */
-
 tabsRouter
     .route('/:tab_id')
     .all((req, res, next) => {
