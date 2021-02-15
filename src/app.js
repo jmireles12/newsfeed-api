@@ -3,7 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
-const { NODE_ENV } = require('./config')
+const { NODE_ENV, CLIENT_ORIGIN } = require('./config')
 const tabsRouter = require('./tabs/tabs-router')
 const newsRouter = require('./news/news-router')
 
@@ -14,7 +14,11 @@ app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common', {
 }))
 
 app.use(helmet())
-app.use(cors())
+app.use(
+    cors({
+        origin: {CLIENT_ORIGIN}
+    }
+))
 
 app.use('/api/tabs', tabsRouter)
 app.use('/api/news', newsRouter)
